@@ -1,0 +1,35 @@
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% comment %} <link href='static/style.css' rel="stylesheet"> {% endcomment %}
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+    {% bootstrap_css %}
+  </head>
+  <body>
+    <nav class=" container col-8 nav">
+        <a class="nav-link active" aria-current="page" href="{% url 'journal:test' %}">Главная</a>
+        <a class="nav-link" href="{% url 'journal:test2' %}">Создать Запись</a>
+    </nav>
+    <main>
+        
+      <div class="container py-4 col-6">
+        {% block content %}{% endblock %}
+      </div>
+
+      <div class="container py-5 col-2">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% for p in page_obj.paginator.page_range %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ p }}">{{ p }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+      </div>
+    </main>

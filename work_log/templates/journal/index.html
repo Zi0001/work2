@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+  Главная страница
+{% endblock %}
+
+
+{% block content %}
+    <table class="table table-bordered border-primary">
+        <tr>
+            <th>Дата</th>
+            <th>Наименование</th>
+            <th>Место</th>
+            <th>Выполнил</th>
+        </tr>
+        {% for record in page_obj.object_list  %}
+            <tr>
+                <td >{{record.created_at}}</td>
+                <td>{{record.completed_work}}</td>
+                <td>{{record.place_of_work}}</td>
+                <td>{{record.name}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
