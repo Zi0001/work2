@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+
+{% block title %}
+  Страница редактирования
+{% endblock %}
+
+
+{% block content %}
+  <div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Редактировать запись</h5>
+    <form method="post">
+            {% bootstrap_form form %}
+            {% csrf_token %}
+        {% bootstrap_button button_type="submit" content="Отправить" %}
+    </form>
+    </div>
+  </div>
+{% endblock %}

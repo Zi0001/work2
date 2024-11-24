@@ -15,6 +15,9 @@
     <nav class="nav bg-info">
         <a class="nav-link" href="{% url 'journal:test' %}">Главная</a>
         <a class="nav-link" href="{% url 'journal:test2' %}">Создать Запись</a>
+        <button type="button" class="btn btn-outline-primary">
+          <a class="text-decoration-none text-reset" href="{% url 'login' 'auth:login' %}">Войти</a>
+        </button>
     </nav>
     <main>
         

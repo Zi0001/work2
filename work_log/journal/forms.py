@@ -5,4 +5,9 @@ from .models import Journal
 class JournalForm(forms.ModelForm):
     class Meta:
         model = Journal
-        fields = ('name', 'completed_work', 'place_of_work')
+        fields = ('problem',)
+
+class EditRecord(forms.ModelForm):
+    class Meta:
+        model = Journal
+        fields = ('place', 'executor')

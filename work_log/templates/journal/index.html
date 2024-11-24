@@ -8,16 +8,17 @@
     <table class="table table-bordered border-primary">
         <tr>
             <th>Дата</th>
-            <th>Наименование</th>
+            <th>Проблема</th>
             <th>Место</th>
-            <th>Выполнил</th>
+            <th>Исполнитель</th>
         </tr>
         {% for record in page_obj.object_list  %}
             <tr>
-                <td >{{record.created_at}}</td>
-                <td>{{record.completed_work}}</td>
-                <td>{{record.place_of_work}}</td>
-                <td>{{record.name}}</td>
+                <td >{{record.date}}</td>
+                <td>{{record.problem}}</td>
+                <td>{{record.place}}</td>
+                <td>{{record.executor}}</td>
+                <td><a href="{% url 'journal:edit' record.id %}">Редактировать</a></td>
             </tr>
         {% endfor %}
     </table>
